@@ -1,46 +1,43 @@
-# Getting Started with Create React App
+# Kaboodle Frontend Technical Test
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repo contains my submission for the Kaboodle Frontend Technical Challenge. It was created using [Create React App](https://github.com/facebook/create-react-app). It can be run by cloning the repository, navigating to the cloned folder and running:
 
-## Available Scripts
+`npm install`
 
-In the project directory, you can run:
+`npm start`
 
-### `npm start`
+## Summary
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Based on the test overview, a simple UI has been created to display the required data for each accommodation in the provided `.json` file. Material UI's React component library was used to streamline the creation of this UI, leaving most components with their default Material UI styling to save time.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Karoomdle contains two views: a list view and a single accommodation view. In the list view, a small subset of the data corresponding to a property can be seen on an `AccommodationCard`. A preview of the property's description is visible, with a button allowing the user to see the full description. There is also a button allowing the user to move to the single accommodation view and see the full details for a specific property.
 
-### `npm test`
+In the single accommodation view, additional information such as address, facilities and room types are included. The details in this view fulfill the requirements of the technical test, and have been included in a separate view as this much information felt too much to display in a list, but would be vital for a user to see if they are interested in a specific property.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Areas To Improve
 
-### `npm run build`
+Below are a few thoughts for areas of this app which could be improved or developed further with more time.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Accessibility
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+With more time, the accessibility of this UI should be investigated. The tabbing order seems to be sensible, but how a screen reader would navigate this page has not been looked into. Some components might need suitable labels to make them more descriptive. The use of default MUI styling should mean that fonts and colours are suitable for users with accessibility requirements.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Responsive Layout
 
-### `npm run eject`
+The UI layout is partially responsive, adjusting for narrower viewports. With more time, this should be tested on mobile devices directly to see whether the layout is suitable and easy to use.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Design
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+This UI would benefit from a design overhaul, which could be done through the `Theme` API provided by MUI. Colour schemes and fonts could be created and implemented to give the UI some branding and some adjustments might be required to layout and to which pieces of information are available where, to make the experience as smooth for users as possible. This work would be best done collaboratively with experienced designers.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Test Coverage
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Basic unit tests are included for some components, but some of the functionality within `App` has not been tested, such as the data "enrichment" function. This function should have unit tests to ensure it manipulates data objects correctly. If this was a public facing app, various other testing methods should be implemented such as visual regression testing for components.
 
-## Learn More
+### Displaying All Data
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Some data included in the data files is not displayed, due to it being out of the scope of the test requirements. With more time it would be logical to display as much of this data as is considered useful.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### More Filtering Options
+
+Similarly to data that isn't displayed, the filtering options are not exhaustive but are sufficient to demonstrate how further filtering would be implemented. For example, filtering by facilities would be logical and simple to add.
